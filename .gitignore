@@ -1,0 +1,13 @@
+application/cache
+application/logs
+logs
+application/config/database.php
+*.class
+*.pyc
+*.pyo
+*.sublime-workspace
+*.project
+nbproject/private/
+pdf
+backup
+ver.txt
