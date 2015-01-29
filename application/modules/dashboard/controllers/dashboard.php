@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class api extends MY_Controller {	
+class dashboard extends MY_Controller {	
 
 	function __construct() {
 
@@ -10,8 +10,7 @@ class api extends MY_Controller {
 	}
 
 	public function index() {
-		if($this->login_status){
-				$this->load->view('dashboard_template');
-		}
+		
+		$this->load->view('dashboard_template');
 	}
 }
