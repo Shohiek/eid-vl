@@ -17,6 +17,16 @@ class  MY_Controller  extends  MX_Controller {
 		$this->load->view("tmpl_head_v");
 	}
 
+	public function navbar(){
+		$this->load->view("navbar_v");
+	}
+	public function filter(){
+		$this->load->view("filters/filter_view");
+	}
+	public function footer(){
+		$this->load->view("tmpl_footer_v");
+	}
+
 }
 
 

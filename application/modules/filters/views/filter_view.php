@@ -1,16 +1,17 @@
 <div class="row">
 
-  <div class="col-md-2">    
+  <div class="col-md-3">    
     <div class="input-group">
       <span class="input-group-addon" style="">Filter By:</span>
       <select required="" class="textfield form-control" name="filter_type" id="filter_type">
-        <option value="1"> National </option>
+        <option value="1"> National Administration </option>
         <option value="2"> Partners </option>
+        <option value="2"> Laboratories </option>
       </select>
     </div>   
   </div>
 
-  <div class="col-md-2">     
+  <div class="col-md-1">     
     <div class="input-group">
       <span class="input-group-addon" style="">Partner:</span>
       <select required="" class="textfield form-control" name="filter_partner" id="filter_partner">
@@ -44,24 +45,10 @@
 
   <div class="col-md-2">    
     <div class="input-group">
-      <span class="input-group-addon" style="">Device:</span>
-      <select required="" class="textfield form-control" name="filter_device" id="filter_device">
+      <span class="input-group-addon" style="">Laboratory:</span>
+      <select required="" class="textfield form-control" name="filter_lab" id="filter_lab">
       </select>
     </div>
   </div>
 
 </div>
-
-<script>
-function filter(type,value){
-      $.ajax({
-          type:"POST",
-          async:false,
-          data:"type="+type+"&value="+value,
-            url:"<?php echo base_url()."filters/filter/post"; ?>",  
-            success:function(data) {
-                  $("#exists").val(data);           
-              }
-      });
-    }
-</script>

@@ -15,6 +15,6 @@ class dashboard extends MY_Controller {
 	}
 
 	public function dashboard_view(){
-		echo "{{home}}";
+		$this->load->view("dashboard_v");
 	}
 }
