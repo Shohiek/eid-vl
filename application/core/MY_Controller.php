@@ -13,6 +13,10 @@ class  MY_Controller  extends  MX_Controller {
 		date_default_timezone_set('Africa/Nairobi');
 	}
 
+	public function head_template(){
+		$this->load->view("tmpl_head_v");
+	}
+
 }
 
 

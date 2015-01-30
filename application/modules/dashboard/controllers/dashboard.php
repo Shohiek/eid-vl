@@ -13,4 +13,8 @@ class dashboard extends MY_Controller {
 		
 		$this->load->view('dashboard_template');
 	}
+
+	public function dashboard_view(){
+		echo "{{home}}";
+	}
 }
