@@ -6,20 +6,15 @@
 </head>
 
 <body>
-  <div class="container" >
+  <div class="container main" >
     <div ui-view="navbar" class="container"></div>
-    <ol ui-view="filter" class="navbar">
+    <ol ui-view="filter" class="">
 
     </ol>
     <div ui-view="main"></div>
   </div>
   <div ui-view="footer"></div>
-
-
 </body>
-
-
-
 <script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.min.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/angular/angular.min.js');?>"></script>

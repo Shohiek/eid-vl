@@ -1,6 +1,6 @@
 <div class="row">
 
-  <div class="col-md-3">    
+  <div class="col-md-2">    
     <div class="input-group">
       <span class="input-group-addon" style="">Filter By:</span>
       <select required="" class="textfield form-control" name="filter_type" id="filter_type">
@@ -11,7 +11,7 @@
     </div>   
   </div>
 
-  <div class="col-md-1">     
+  <div class="col-md-2">     
     <div class="input-group">
       <span class="input-group-addon" style="">Partner:</span>
       <select required="" class="textfield form-control" name="filter_partner" id="filter_partner">
