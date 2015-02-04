@@ -13,14 +13,6 @@
 
   <div class="col-md-2">     
     <div class="input-group">
-      <span class="input-group-addon" style="">Partner:</span>
-      <select required="" class="textfield form-control" name="filter_partner" id="filter_partner">
-      </select>
-    </div>  
-  </div>
-
-  <div class="col-md-2">     
-    <div class="input-group">
       <span class="input-group-addon" style="">Region:</span>
       <select required="" class="textfield form-control" name="filter_region" id="filter_region">
       </select>
@@ -39,6 +31,14 @@
     <div class="input-group">
       <span class="input-group-addon" style="">Facility:</span>
       <select required="" class="textfield form-control" name="filter_facility" id="filter_facility">
+      </select>
+    </div>  
+  </div>
+
+  <div class="col-md-2">     
+    <div class="input-group">
+      <span class="input-group-addon" style="">Partner:</span>
+      <select required="" class="textfield form-control" name="filter_partner" id="filter_partner">
       </select>
     </div>  
   </div>
