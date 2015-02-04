@@ -20,8 +20,7 @@ angular
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
-				controller: ['$scope', function($scope){
-				}]
+				controller: navbar_Ctrl
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -54,8 +53,7 @@ angular
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
-				controller: ['$scope', function($scope){
-				}]
+				controller: navbar_Ctrl
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -80,8 +78,7 @@ angular
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
-				controller: ['$scope', function($scope){
-				}]
+				controller: navbar_Ctrl
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -104,4 +101,17 @@ var ngProgress_Test = ['$scope','$timeout','ngProgress',function($scope, $timeou
 
 	ngProgress.start();
 	$timeout(ngProgress.complete(), 100000);
+}]
+
+var navbar_Ctrl	=	['$scope','$location', function($scope,$location){
+    
+	$scope.getClass = function(path) {
+		// alert($location.path());
+		if ($location.path() == path) {
+			return "active"
+		} else {
+			return ""
+		}
+	}
+
 }]

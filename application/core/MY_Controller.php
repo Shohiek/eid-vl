@@ -26,6 +26,9 @@ class  MY_Controller  extends  MX_Controller {
 	public function footer(){
 		$this->load->view("tmpl_footer_v");
 	}
+	public function logout(){
+		
+	}
 
 }
 

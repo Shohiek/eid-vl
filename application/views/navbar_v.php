@@ -14,9 +14,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#Dashboard">Dashboard (Analytics)<span class="sr-only"></span></a></li>
-        <li><a href="#lab">Laboratories</a></li>
-        <li><a href="#facilities">Facilities</a></li>
+        <li ng-class="getClass('/')"><a href="#Dashboard">Dashboard (Analytics)<span class="sr-only"></span></a></li>
+        <li ng-class="getClass('/lab')"><a href="#lab">Laboratories</a></li>
+        <li ng-class="getClass('/facilities')"><a href="#facilities">Facilities</a></li>
         <li><a href="#kits">Kits</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
@@ -30,7 +30,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Actions <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="logout">Logout</a></li>
+            <li><a href="dashboard/logout">Logout</a></li>
             <li><a href="#Help">Help</a></li>
             <li><a href="#profile/my_profile">User Profile</a></li>
             <li class="divider"></li>
