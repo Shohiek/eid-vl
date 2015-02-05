@@ -26,7 +26,18 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"></a></li>
+        <li class=" active" title="Todays Date">
+          
+          <a data-toggle="dropdown " href="#" class="dropdown-toggle date_on_nav">
+            <center>
+              <span class="user-info">
+                <small><b><?php echo Date("F D Y,")?></b></small>
+                <br/>
+                <b><?php echo Date("l")?></b>           
+              </span>
+            </center>
+          </a>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Actions <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">

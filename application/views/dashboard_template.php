@@ -8,10 +8,13 @@
 <body>
   <div class="container main" >
     <div ui-view="navbar" class="container"></div>
-    <ol ui-view="filter" class="">
 
-    </ol>
+    <div ui-view="filter" class="container-fluid"></div>
+
+    <div ui-view="date_filter" class=""></div>
+
     <div ui-view="main"></div>
+
   </div>
   <div ui-view="footer"></div>
 </body>

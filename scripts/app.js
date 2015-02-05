@@ -99,6 +99,7 @@ angular
 
 var ngProgress_Test = ['$scope','$timeout','ngProgress',function($scope, $timeout, ngProgress) {
 
+	ngProgress.color('#cfba13');
 	ngProgress.start();
 	$timeout(ngProgress.complete(), 100000);
 }]
@@ -106,7 +107,6 @@ var ngProgress_Test = ['$scope','$timeout','ngProgress',function($scope, $timeou
 var navbar_Ctrl	=	['$scope','$location', function($scope,$location){
     
 	$scope.getClass = function(path) {
-		// alert($location.path());
 		if ($location.path() == path) {
 			return "active"
 		} else {

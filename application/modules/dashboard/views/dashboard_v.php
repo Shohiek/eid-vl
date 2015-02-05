@@ -1,1 +1,1 @@
-Dashboard stub
+<div style="height:20000px">Dashboard stub</div>
