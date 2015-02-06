@@ -20,7 +20,7 @@ angular
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
-				controller: navbar_Ctrl
+				controller: 'dashboardCtrl'
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
