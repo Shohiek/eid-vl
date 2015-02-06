@@ -19,6 +19,6 @@ class dashboard extends MY_Controller {
 	}
 
 	public function db(){
-		echo "kjfhskdjf";	
+		echo "Test";	
 	}
 }
