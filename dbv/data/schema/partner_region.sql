@@ -1,4 +1,4 @@
-CREATE TABLE `partner_counties` (
+CREATE TABLE `partner_region` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `partner_id` int(11) NOT NULL COMMENT 'FK to partner',
   `region_id` int(11) NOT NULL COMMENT 'FK to region',
