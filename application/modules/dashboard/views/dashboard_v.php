@@ -39,7 +39,7 @@
 		</ul>
 	</div>
 	<div class="col-md-10">
-		<div class="" ui-view="widget"></div>
+		<div class="" ui-view></div>
 	</div>	
 </div>
 

@@ -18,7 +18,28 @@ class dashboard extends MY_Controller {
 		$this->load->view("dashboard_v");
 	}
 
-	public function db(){
+	public function tests(){
 		echo "Test";	
+	}
+	public function tat(){
+		echo "tat";	
+	}
+	public function facilitiesTests(){
+		echo "facilitiesTests";	
+	}
+	public function labPerformance(){
+		echo "labPerformance";	
+	}
+	public function TBCoinf(){
+		echo "TBCoinf";	
+	}
+	public function VLSuppression(){
+		echo "VLSuppression";	
+	}
+	public function SampleType(){
+		echo "SampleType";	
+	}
+	public function BF(){
+		echo "BF";	
 	}
 }

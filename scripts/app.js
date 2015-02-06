@@ -17,7 +17,8 @@ angular
 				templateUrl: 'dashboard/dashboard_view'
 			},
 			'navbar':{
-				templateUrl: 'dashboard/navbar'			
+				templateUrl: 'dashboard/navbar',				
+				controller: navbar_Ctrl		
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -36,14 +37,40 @@ angular
 			}
 		}
 	})
-	.state('Dashboard.subs',{
+
+	.state('Dashboard.tests',{
 		url: '',
-		views:{
-			'widget@Dashboard':{
-				templateUrl: 'dashboard/db'
-			}
-		}
+		templateUrl: 'dashboard/tests'
 	})
+	.state('Dashboard.tat',{
+		url: 'tat',
+		templateUrl: 'dashboard/tat'
+	})
+	.state('Dashboard.facilitiesTests',{
+		url: 'facilitiesTests',
+		templateUrl: 'dashboard/facilitiesTests'
+	})
+	.state('Dashboard.labPerformance',{
+		url: 'labPerformance',
+		templateUrl: 'dashboard/labPerformance'
+	})
+	.state('Dashboard.TBCoinf',{
+		url: 'TBCoinf',
+		templateUrl: 'dashboard/TBCoinf'
+	})
+	.state('Dashboard.VLSuppression',{
+		url: 'VLSuppression',
+		templateUrl: 'dashboard/VLSuppression'
+	})
+	.state('Dashboard.SampleType',{
+		url: 'SampleType',
+		templateUrl: 'dashboard/SampleType'
+	})
+	.state('Dashboard.BF',{
+		url: 'BF',
+		templateUrl: 'dashboard/BF'
+	})
+
 	.state('lab',{
 		url: '/lab',
 		views:{
@@ -119,29 +146,13 @@ angular
 			}
 		}
 	});
-}])
-.run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state, $stateParams) {
-	$rootScope.$state = $state;
-	$rootScope.$stateParams = $stateParams;
-	$state.transitionTo('test.subs');
-}])
-.run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state, $stateParams) {
-	$rootScope.$state = $state;
-	$rootScope.$stateParams = $stateParams;
-	$state.transitionTo('Dashboard.subs');
 }]);
 
-
-var ngProgress_Test = ['$scope','$timeout','ngProgress',function($scope, $timeout, ngProgress) {
-
-	ngProgress.color('#cfba13');
-	ngProgress.start();
-	$timeout(ngProgress.complete(), 100000);
-}]
 
 var navbar_Ctrl	=	['$scope','$location', function($scope,$location){
 
 	$scope.getClass = function(path) {
+		// alert($location.path() +"-"+ path);
 		if ($location.path() == path) {
 			return "active"
 		} else {
