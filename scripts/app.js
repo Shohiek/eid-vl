@@ -30,6 +30,9 @@ angular
 				templateUrl: 'dashboard/filter',
 				controller: "dashboardCtrl"
 			},
+			'date_filter':{
+				templateUrl: 'dashboard/date_filter'
+			},
 			'footer':{
 				templateUrl: 'dashboard/footer',
 				controller: ['$scope', function($scope){
@@ -40,35 +43,35 @@ angular
 
 	.state('Dashboard.tests',{
 		url: '',
-		templateUrl: 'dashboard/tests'
+		templateUrl: 'dashboard/dashboard_item'
 	})
 	.state('Dashboard.tat',{
 		url: 'tat',
-		templateUrl: 'dashboard/tat'
+		templateUrl: 'dashboard/dashboard_item'
 	})
 	.state('Dashboard.facilitiesTests',{
 		url: 'facilitiesTests',
-		templateUrl: 'dashboard/facilitiesTests'
+		templateUrl: 'dashboard/dashboard_item'
 	})
 	.state('Dashboard.labPerformance',{
 		url: 'labPerformance',
-		templateUrl: 'dashboard/labPerformance'
+		templateUrl: 'dashboard/dashboard_item'
 	})
 	.state('Dashboard.TBCoinf',{
 		url: 'TBCoinf',
-		templateUrl: 'dashboard/TBCoinf'
+		templateUrl: 'dashboard/dashboard_item'
 	})
 	.state('Dashboard.VLSuppression',{
 		url: 'VLSuppression',
-		templateUrl: 'dashboard/VLSuppression'
+		templateUrl: 'dashboard/dashboard_item'
 	})
 	.state('Dashboard.SampleType',{
 		url: 'SampleType',
-		templateUrl: 'dashboard/SampleType'
+		templateUrl: 'dashboard/dashboard_item'
 	})
 	.state('Dashboard.BF',{
 		url: 'BF',
-		templateUrl: 'dashboard/BF'
+		templateUrl: 'dashboard/dashboard_item'
 	})
 
 	.state('lab',{

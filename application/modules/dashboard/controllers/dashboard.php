@@ -42,4 +42,9 @@ class dashboard extends MY_Controller {
 	public function BF(){
 		echo "BF";	
 	}
+
+	public function dashboard_item(){
+
+		$this->load->view("dashboard_item_v");
+	}
 }
