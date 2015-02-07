@@ -25,5 +25,7 @@
 <script src="<?php echo base_url('assets/bower_components/angular-ui-router/release/angular-ui-router.min.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/ngprogress/build/ngprogress.min.js');?>"></script>
 
+
 <script src="<?php echo base_url('scripts/app.js');?>"></script>
+<script src="<?php echo base_url('scripts/controllers/dashboardCtrl.js');?>"></script>
 </html>

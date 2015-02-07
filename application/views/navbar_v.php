@@ -28,11 +28,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li class=" active" title="Todays Date">
           
-          <a data-toggle="dropdown " href="#" class="dropdown-toggle date_on_nav">
+          <a data-toggle="dropdown " href="#" class="dropdown-toggle ">
             <center>
               <span class="user-info">
                 <small><b><?php echo Date("F D Y,")?></b></small>
-                <br/>
                 <b><?php echo Date("l")?></b>           
               </span>
             </center>

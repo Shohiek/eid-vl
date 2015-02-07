@@ -10,17 +10,15 @@ angular
 
 	$stateProvider
 	.state('Dashboard',{
-		url: '/',
+		url: '/',		
+		abstract: true,
 		views:{
 			'main':{
-				templateUrl: 'dashboard/dashboard_view',
-				controller: ['$scope', function($scope){
-					$scope.home= "dd"
-				}]
+				templateUrl: 'dashboard/dashboard_view'
 			},
 			'navbar':{
-				templateUrl: 'dashboard/navbar',
-				controller: navbar_Ctrl
+				templateUrl: 'dashboard/navbar',				
+				controller: navbar_Ctrl		
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -30,18 +28,52 @@ angular
 			},
 			'filter':{
 				templateUrl: 'dashboard/filter',
-				controller: ['$scope', function($scope){
-					$scope.title= "EID/Viral Load Dashboard"
-				}]
+				controller: "dashboardCtrl"
+			},
+			'date_filter':{
+				templateUrl: 'dashboard/date_filter'
 			},
 			'footer':{
 				templateUrl: 'dashboard/footer',
 				controller: ['$scope', function($scope){
-					$scope.title= "EID/Viral Load Dashboard"
 				}]
 			}
 		}
 	})
+
+	.state('Dashboard.tests',{
+		url: '',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.tat',{
+		url: 'tat',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.facilitiesTests',{
+		url: 'facilitiesTests',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.labPerformance',{
+		url: 'labPerformance',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.TBCoinf',{
+		url: 'TBCoinf',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.VLSuppression',{
+		url: 'VLSuppression',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.SampleType',{
+		url: 'SampleType',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.BF',{
+		url: 'BF',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+
 	.state('lab',{
 		url: '/lab',
 		views:{
@@ -74,7 +106,7 @@ angular
 		views:{
 			'main':{
 				templateUrl: 'facilities/facilities_view',
-				controller: ngProgress_Test
+				// controller: ngProgress_Test
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
@@ -94,19 +126,36 @@ angular
 			}
 		}
 	})
+
+	.state('test', {
+		abstract: true,
+		url: '/test',
+		views: {
+			'main': {
+				template:  '<h1>Hello!!!</h1>' +
+				'<div ui-view="view1"></div>' +
+				'<div ui-view="view2"></div>'
+			}
+		}
+	})
+	.state('test.subs', {
+		url: '',
+		views: {
+			'view1@test': {
+				template: "Im View1"
+			},
+			'view2@test': {
+				template: "Im View2"
+			}
+		}
+	});
 }]);
 
 
-var ngProgress_Test = ['$scope','$timeout','ngProgress',function($scope, $timeout, ngProgress) {
-
-	ngProgress.color('#cfba13');
-	ngProgress.start();
-	$timeout(ngProgress.complete(), 100000);
-}]
-
 var navbar_Ctrl	=	['$scope','$location', function($scope,$location){
-    
+
 	$scope.getClass = function(path) {
+		// alert($location.path() +"-"+ path);
 		if ($location.path() == path) {
 			return "active"
 		} else {

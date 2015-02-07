@@ -1,4 +1,4 @@
-<div class="row" style="border-bottom: 1px solid #eee;padding-bottom:10px;margin-bottom:10px;">
+<div class="row " style="border-bottom: 1px solid #eee;padding-bottom:10px;margin-bottom:10px;">
 
   <div class="col-md-3">    
     <div class="input-group">

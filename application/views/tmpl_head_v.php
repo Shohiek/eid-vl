@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap-datepicker/css/datepicker3.css');?>">
 
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap-datepicker/css/datepicker3.css');?>">
+<!-- <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootcards/dist/css/bootcards-desktop-lite.min.css');?>"> -->
 
 <!-- Calendar -->
 <link rel="stylesheet" href="<?php echo base_url().'assets/bower_components/fullcalendar/dist/fullcalendar.min.css'; ?>"/>
