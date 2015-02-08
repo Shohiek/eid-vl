@@ -25,7 +25,7 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav nav-primary navbar-right">
         <li class=" active" title="Todays Date">
           
           <a data-toggle="dropdown " href="#" class="dropdown-toggle ">
