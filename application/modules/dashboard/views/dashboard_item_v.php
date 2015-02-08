@@ -12,7 +12,7 @@
 			<div style="height:200px"> stub </div>
 
 			<div class="panel-footer">
-				<button class="btn btn-default btn-block">
+				<button class="btn btn-info btn-block">
 					<i class="fa fa-bar-chart-o"></i>
 					Show Chart
 				</button>
@@ -37,7 +37,7 @@
 			<div style="height:200px"> stub </div>
 
 			<div class="panel-footer">
-				<button class="btn btn-default btn-block">
+				<button class="btn btn-info btn-block">
 					<i class="fa fa-bar-chart-o"></i>
 					Show Chart
 				</button>

@@ -2,7 +2,10 @@ angular
 .module('dashboard',[
 	'ngRoute',
 	'ui.router',
-	'ngProgress'
+	'ngProgress',
+	'ngSanitize', 
+	'ui.select',
+	'daterangepicker'
 	])
 .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
@@ -28,10 +31,7 @@ angular
 			},
 			'filter':{
 				templateUrl: 'dashboard/filter',
-				controller: "dashboardCtrl"
-			},
-			'date_filter':{
-				templateUrl: 'dashboard/date_filter'
+				controller: "filtersCtrl"
 			},
 			'footer':{
 				templateUrl: 'dashboard/footer',
