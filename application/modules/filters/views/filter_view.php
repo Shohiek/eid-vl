@@ -19,6 +19,7 @@
 .ui-select-choices-group-label{
   font-weight: bold;
   font-size:14px;
+  color: #080808;
 }
 </style>
 <script type="text/javascript">
@@ -61,7 +62,7 @@ function(start, end) {
 
   <ui-select ng-model="filters.entities.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
     <ui-select-match placeholder="Search Criteria to Filter by...">{{$select.selected.name +" ("+ $select.selected.type +")"  }}</ui-select-match>
-    <ui-select-choices group-by="'type'" repeat="entity in filters.entities | entityFilter: {name: $select.search, phone: $select.search}">
+    <ui-select-choices group-by="'type'" repeat="entity in filters.entities | entityFilter: {name: $select.search, type: $select.search}">
       <div ng-bind-html="entity.name | highlight: $select.search"></div>
       <small>
         email: {{entity.email}}
@@ -75,7 +76,7 @@ function(start, end) {
 
 <div class="input-group" class="filterItem">
   <div class="input-group-btn ">
-    <button type="button" ng-click="clear()" class="btn btn-primary filterButton"><i class="fa fa-undo fa-sm"></i> Reset</button>      
+    <button type="button" ng-click="filters.clear()" class="btn btn-primary filterButton"><i class="fa fa-undo fa-sm"></i> Reset</button>      
   </div>
 </div>
 </div>

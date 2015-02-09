@@ -34,8 +34,8 @@
 			<li><a href="#labPerformance">Lab Performance</a></li>
 			<li><a href="#TBCoinf">TB Co-Infection </a></li>
 			<li><a href="#VLSuppression">Viral Load Suppression Level </a></li>
-			<li><a href="#SampleType">Sample Type </a></li>
-			<li><a href="#BF">EID Breast Feeding</a></li>
+			<li ng-show="true"><a href="#SampleType">Sample Type </a></li>
+			<li ng-show="true"><a href="#BF">EID Breast Feeding {{filters.programs.selected.initials}} </a></li>
 		</ul>
 	</div>
 	<div class="col-md-10">

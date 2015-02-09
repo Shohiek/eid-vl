@@ -1,6 +1,4 @@
-angular
-.module('dashboard')
-.controller('filtersCtrl',['$scope','$http',function($scope,$http){
+app.controller('filtersCtrl',['$scope','$http',function($scope,$http){
 
 	$scope.address = {};
 	$scope.filters = {};
@@ -19,17 +17,17 @@ angular
 
 	$scope.filters.entities = 
 	[
-	{ name: 'Iringa',      						      					phone:'1234567'		, type: 'Region' },
-	{ name: 'Ruvuma',    				email: 'ruvuma@email.com',    	phone:'1234567'		, type: 'Region' },
-	{ name: 'CSSC', 					email: 'cssc@email.com', 		phone:'1234567'		, type: 'Implementing Partner' },
-	{ name: 'Walter Reed',				email: 'adrian@email.com',    	phone:'1234567'		, type: 'Implementing Partner' },
-	{ name: 'Arumeru',  				email: 'arumeru@email.com',  	phone:'1234567'		, type: 'District' },
-	{ name: 'Kilolo',  					email: 'Kilolo@email.com',  	phone:'1234567'		, type: 'District' },
-	{ name: 'Idodo',  					email: 'Idodo@email.com',  		phone:'1234567'		, type: 'Facility' },
-	{ name: 'Mafinga',    				email: 'Mafinga@email.com',    	phone:'1234567'		, type: 'District' },
-	{ name: 'Mbeya District Hospital', 	email: 'natasha@email.com',   	phone:'1234567'		, type: 'HPV Lab' },
-	{ name: 'Ruvuma Hospital',   		email: 'natasha@email.com',   	phone:'1234567'		, type: 'HPV Lab' },
-	{ name: 'Mgololo',  				email: 'Mgololo@email.com',  	phone:'1234567'		, type: 'Facility' }
+	{ name: 'Iringa',      						      					phone:'1234567'		, type: 'Regions' },
+	{ name: 'Ruvuma',    				email: 'ruvuma@email.com',    	phone:'1234567'		, type: 'Regions' },
+	{ name: 'CSSC', 					email: 'cssc@email.com', 		phone:'1234567'		, type: 'Implementing Partners' },
+	{ name: 'Walter Reed',				email: 'adrian@email.com',    	phone:'1234567'		, type: 'Implementing Partners' },
+	{ name: 'Arumeru',  				email: 'arumeru@email.com',  	phone:'1234567'		, type: 'Districts' },
+	{ name: 'Kilolo',  					email: 'Kilolo@email.com',  	phone:'1234567'		, type: 'Districts' },
+	{ name: 'Idodo',  					email: 'Idodo@email.com',  		phone:'1234567'		, type: 'Facilities' },
+	{ name: 'Mafinga',    				email: 'Mafinga@email.com',    	phone:'1234567'		, type: 'Districts' },
+	{ name: 'Mbeya District Hospital', 	email: 'natasha@email.com',   	phone:'1234567'		, type: 'HPV Labs' },
+	{ name: 'Ruvuma Hospital',   		email: 'natasha@email.com',   	phone:'1234567'		, type: 'HPV Labs' },
+	{ name: 'Mgololo',  				email: 'Mgololo@email.com',  	phone:'1234567'		, type: 'Facilities' }
 	];
 
 	$scope.filters.programs.selected = 		{ name: 'Viral Load', 				initials:'VL' };
