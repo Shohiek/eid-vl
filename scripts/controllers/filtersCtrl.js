@@ -1,4 +1,4 @@
-app.controller('filtersCtrl',['$scope', 'Filters', function($scope,Filters){
+app.controller('filtersCtrl',['$scope','$location', 'Filters', function($scope,$location,Filters){
 
 	Filters.programs= {};
 	Filters.entities= {};
@@ -14,14 +14,13 @@ app.controller('filtersCtrl',['$scope', 'Filters', function($scope,Filters){
 	function getEntities() {
 		Filters.getEntities()
 		.success(function (ents) {
-			
-			console.log(ents);
 			$scope.filters.entities = ents;
 		})
 		.error(function (error) {
 			$scope.status = 'Unable to load Filters data: ' + error.message;
 		});
 	}
+
 	$scope.filters.clear = function() {
 		$scope.filters.entities.selected = undefined;
 		$scope.filters.programs.selected = undefined;
@@ -37,8 +36,8 @@ app.controller('filtersCtrl',['$scope', 'Filters', function($scope,Filters){
 	];
 
 	$scope.bindProgramSelected= function (){
-		// alert($scope.filters.programs.selected.initials)
 		Filters.programs.selected =$scope.filters.programs.selected 
+		 $location.path( Filters.programs.selected.initials );
 	}
 	
 

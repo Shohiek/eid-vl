@@ -45,32 +45,59 @@ var app = angular
 		url: '',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.tat',{
-		url: 'tat',
+
+	.state('Dashboard.VLtests',{
+		url: 'VL/tests',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.facilitiesTests',{
-		url: 'facilitiesTests',
+	.state('Dashboard.VLtat',{
+		url: 'VL/tat',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.labPerformance',{
-		url: 'labPerformance',
+	.state('Dashboard.VLfacilitiesTests',{
+		url: 'VL/facilitiesTests',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.TBCoinf',{
-		url: 'TBCoinf',
+	.state('Dashboard.VLlabPerformance',{
+		url: 'VL/labPerformance',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.VLSuppression',{
-		url: 'VLSuppression',
+	.state('Dashboard.VLTBCoinf',{
+		url: 'VL/TBCoinf',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.SampleType',{
-		url: 'SampleType',
+	.state('Dashboard.VLVLSuppression',{
+		url: 'VL/VLSuppression',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.BF',{
-		url: 'BF',
+	.state('Dashboard.VLSampleType',{
+		url: 'VL/SampleType',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+
+
+	.state('Dashboard.EIDtests',{
+		url: 'EID/tests',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDtat',{
+		url: 'EID/tat',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDfacilitiesTests',{
+		url: 'EID/facilitiesTests',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDlabPerformance',{
+		url: 'EID/labPerformance',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDSampleType',{
+		url: 'EID/SampleType',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDBF',{
+		url: 'EID/BF',
 		templateUrl: 'dashboard/dashboard_item'
 	})
 
