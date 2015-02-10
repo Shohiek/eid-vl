@@ -5,7 +5,8 @@ var app = angular
 	'ngProgress',
 	'ngSanitize', 
 	'ui.select',
-	'daterangepicker'
+	'daterangepicker',
+	'chart.js'
 	])
 .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
@@ -43,12 +44,15 @@ var app = angular
 
 	.state('Dashboard.tests',{
 		url: '',
-		templateUrl: 'dashboard/dashboard_item'
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'		
 	})
+	
 
 	.state('Dashboard.VLtests',{
 		url: 'VL/tests',
-		templateUrl: 'dashboard/dashboard_item'
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'
 	})
 	.state('Dashboard.VLtat',{
 		url: 'VL/tat',

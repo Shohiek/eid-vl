@@ -30,6 +30,9 @@
 <script src="<?php echo base_url('assets/bower_components/angular-sanitize/angular-sanitize.min.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/bootstrap-daterangepicker/daterangepicker.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/angular-daterangepicker/js/angular-daterangepicker.min.js');?>"></script>
+<script src="<?php echo base_url('assets/bower_components/moment/moment.js');?>"></script>
+<script src="<?php echo base_url('assets/bower_components/Chart.js/Chart.min.js');?>"></script>
+<script src="<?php echo base_url('assets/bower_components/angular-chart.js/dist/angular-chart.js');?>"></script>
 
 
 <!--app -->
@@ -37,6 +40,7 @@
 
 <!--Controllers -->
 <script src="<?php echo base_url('scripts/controllers/dashboardCtrl.js');?>"></script>
+<script src="<?php echo base_url('scripts/controllers/dashboardTestTrendsCtrl.js');?>"></script>
 <script src="<?php echo base_url('scripts/controllers/filtersCtrl.js');?>"></script>
 
 

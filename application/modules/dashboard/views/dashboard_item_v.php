@@ -9,10 +9,14 @@
 				<h3 class="panel-title">Monthly Testing Trends</h3>      
 			</div> 
 
-			<div style="height:200px"> stub </div>
+			<div style="">
+				<canvas id="line" class="chart chart-bar" data="data" labels="labels" legend="true" series="series"click="onClick">
+				</canvas> 
+
+			</div>
 
 			<div class="panel-footer">
-				<button class="btn btn-info btn-block">
+				<button ng-click="test()" class="btn btn-info btn-block">
 					<i class="fa fa-bar-chart-o"></i>
 					Show Chart
 				</button>
@@ -34,7 +38,10 @@
 				<h3 class="panel-title">Monthly Testing Trends</h3>      
 			</div> 
 
-			<div style="height:200px"> stub </div>
+			<div style=""> 
+				<canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series"click="onClick">
+				</canvas> 
+			</div>
 
 			<div class="panel-footer">
 				<button class="btn btn-info btn-block">
