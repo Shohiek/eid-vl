@@ -50,7 +50,7 @@ function(start, end) {
 
 <div class="row " style="border-bottom: 1px solid #eeeeee;padding-bottom:10px">
   <div class="col-md-3 filterSection">
-    <ui-select ng-model="filters.programs.selected " theme="bootstrap" ng-disabled="disabled" reset-search-input="false" style="" class="filterItem">
+    <ui-select ng-model="filters.programs.selected " theme="bootstrap" ng-disabled="disabled" on-select="bindProgramSelected()" reset-search-input="false" style="" class="filterItem">
     <ui-select-match placeholder="Select a Program...">{{$select.selected.name +" ("+ $select.selected.initials +")" }}</ui-select-match>
     <ui-select-choices repeat="program in filters.programs track by $index" >
     <div ng-bind-html="program.name | highlight: $select.search"></div>

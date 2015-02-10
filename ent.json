@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Ruvuma",
+        "phone": "1234567",
+        "type": "Regions"
+    },
+    {
+        "name": "CSSC",
+        "phone": "1234567",
+        "type": "Implementing Partner"
+    },
+    {
+        "name": "Iringa",
+        "phone": "1234567",
+        "type": "Regions"
+    }
+]

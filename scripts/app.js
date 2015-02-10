@@ -21,8 +21,7 @@ var app = angular
 				controller:'dashboardCtrl'
 			},
 			'navbar':{
-				templateUrl: 'dashboard/navbar',				
-				controller: navbar_Ctrl		
+				templateUrl: 'dashboard/navbar'	
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -86,7 +85,6 @@ var app = angular
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
-				controller: navbar_Ctrl
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -110,8 +108,7 @@ var app = angular
 				// controller: ngProgress_Test
 			},
 			'navbar':{
-				templateUrl: 'dashboard/navbar',
-				controller: navbar_Ctrl
+				templateUrl: 'dashboard/navbar'
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -151,17 +148,3 @@ var app = angular
 		}
 	});
 }]);
-
-
-var navbar_Ctrl	=	['$scope','$location', function($scope,$location){
-
-	$scope.getClass = function(path) {
-		// alert($location.path() +"-"+ path);
-		if ($location.path() == path) {
-			return "active"
-		} else {
-			return ""
-		}
-	}
-
-}]
