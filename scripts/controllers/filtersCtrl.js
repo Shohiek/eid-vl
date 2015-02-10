@@ -2,19 +2,46 @@ app.controller('filtersCtrl',['$scope','$location', 'Filters', function($scope,$
 
 	Filters.programs= {};
 	Filters.entities= {};
-	Filters.dates= {}; 				//all these needs to be put in a provider
+	Filters.dates= {}; 	
+	Filters.programs.selected =	{ name: 'Viral Load', 				initials:'VL' };			//all these needs to be put in a provider
+	Filters.dates.start = ''
+	Filters.dates.end = ''
 
 	$scope.filters = {};
+	$scope.filters.programs = [{ name: '', 				initials:'' }];	
+	$scope.filters.programs.selected = 	Filters.programs.selected ;
+	$scope.filters.dates = {};
 
 	$scope.filters.entities = [{ name: '', email:'',phone:'', type: '' }];
 
-	getEntities();
+	$scope.filters.dates.start = ''
+	$scope.filters.dates.end = ''
+
+	initializeFilters();
 
 
-	function getEntities() {
+	function initializeFilters() {
 		Filters.getEntities()
 		.success(function (ents) {
 			$scope.filters.entities = ents;
+		})
+		.error(function (error) {
+			$scope.status = 'Unable to load Filters data: ' + error.message;
+		});
+
+
+		Filters.getPrograms()
+		.success(function (prog) {
+			$scope.filters.programs = prog;
+		})
+		.error(function (error) {
+			$scope.status = 'Unable to load Filters data: ' + error.message;
+		});
+
+
+		Filters.getDates()
+		.success(function (dates) {
+			$scope.filters.dates = dates;
 		})
 		.error(function (error) {
 			$scope.status = 'Unable to load Filters data: ' + error.message;
@@ -29,22 +56,17 @@ app.controller('filtersCtrl',['$scope','$location', 'Filters', function($scope,$
 		Filters.programs.selected = undefined;
 	};
 
-	$scope.filters.programs = 
-	[
-	{ name: 'Viral Load', 				initials:'VL' },
-	{ name: 'Early Infant Diagnosis', 	initials:'EID' },
-	];
-
 	$scope.bindProgramSelected= function (){
 		Filters.programs.selected =$scope.filters.programs.selected 
-		 $location.path( Filters.programs.selected.initials );
+		$location.path( Filters.programs.selected.initials );
 	}
-	
+	$scope.bindDates = function(st,en){
+		$scope.filters.dates.start = st
+		$scope.filters.dates.end = en
 
-	$scope.filters.programs.selected = 	Filters.programs.selected =	{ name: 'Viral Load', 				initials:'VL' };
+		Filters.dates.start = st
+		Filters.dates.end = en	}
 
-	$scope.filters.startDate = moment().startOf('year').format('YYYY-MM-D');
-	$scope.filters.endDate = moment().format('YYYY-MM-D');
 }])
 .filter('entityFilter', function() {
 	return function(items, props) {

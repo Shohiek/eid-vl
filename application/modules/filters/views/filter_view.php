@@ -35,8 +35,9 @@ $('#reportrange').daterangepicker(
    'Last Six Months': [moment().subtract('month', 6).startOf('month'), moment().subtract('month').endOf('month')],
    'This Year': [moment().startOf('year'),moment()],
  },
- startDate: moment().startOf('year'),
- endDate: moment(),
+ format: 'YYYY-MM-DD',
+ startDate: '<?php echo date("Y");?>-1-1',
+ endDate: '<?php echo date("Y-m-d");?>',
  showWeekNumbers:true,
  showDropdowns:true
 },
@@ -44,11 +45,16 @@ function(start, end) {
   $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
   $('#fro').val(start.format('YYYY-MM-D') ).trigger('change');
   $('#to').val(end.format('YYYY-MM-D') ).trigger('change');
+
+  angular.element('#filterNav').scope().bindDates(start.format('YYYY-MM-D'),end.format('YYYY-MM-D'));
 }
 );
+
+$('#reportrange').on('apply.daterangepicker', function(ev, picker) {
+})
 </script>
 
-<div class="row " style="border-bottom: 1px solid #eeeeee;padding-bottom:10px">
+<div class="row " style="border-bottom: 1px solid #eeeeee;padding-bottom:10px" id="filterNav">
   <div class="col-md-3 filterSection">
     <ui-select ng-model="filters.programs.selected " theme="bootstrap" ng-disabled="disabled" on-select="bindProgramSelected()" reset-search-input="false" style="" class="filterItem">
     <ui-select-match placeholder="Select a Program...">{{$select.selected.name +" ("+ $select.selected.initials +")" }}</ui-select-match>
@@ -61,24 +67,24 @@ function(start, end) {
 <div class="col-md-3 filterSection">
 
   <ui-select ng-model="filters.entities.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
-    <ui-select-match placeholder="Search Criteria to Filter by...">{{$select.selected.name +" ("+ $select.selected.type +")"  }}</ui-select-match>
-    <ui-select-choices group-by="'type'" repeat="entity in filters.entities | entityFilter: {name: $select.search, type: $select.search}">
-      <div ng-bind-html="entity.name | highlight: $select.search"></div>
-      <small>
-        email: {{entity.email}}
-        phone: <span ng-bind-html="''+entity.phone | highlight: $select.search"></span>
-      </small>
-    </ui-select-choices>
-    </ui-select>
+  <ui-select-match placeholder="Search Criteria to Filter by...">{{$select.selected.name +" ("+ $select.selected.type +")"  }}</ui-select-match>
+  <ui-select-choices group-by="'type'" repeat="entity in filters.entities | entityFilter: {name: $select.search, type: $select.search}">
+  <div ng-bind-html="entity.name | highlight: $select.search"></div>
+  <small>
+    email: {{entity.email}}
+    phone: <span ng-bind-html="''+entity.phone | highlight: $select.search"></span>
+  </small>
+</ui-select-choices>
+</ui-select>
 
 </div>
 <div class="col-md-3 filterSection">
 
-<div class="input-group" class="filterItem">
-  <div class="input-group-btn ">
-    <button type="button" ng-click="filters.clear()" class="btn btn-primary filterButton"><i class="fa fa-undo fa-sm"></i> Reset</button>      
+  <div class="input-group" class="filterItem">
+    <div class="input-group-btn ">
+      <button type="button" ng-click="filters.clear()" class="btn btn-primary filterButton"><i class="fa fa-undo fa-sm"></i> Reset</button>      
+    </div>
   </div>
-</div>
 </div>
 
 <div class="col-md-3 filterSection">
@@ -96,5 +102,5 @@ function(start, end) {
 
 </div>
 
-<input class="hide" type="text" id="fro" ng-model="filters.startDate" />    <!-- {{ filters.startDate}} --> <br/>
-<input class="hide" type="text" id="to"  ng-model="filters.endDate"/>   <!-- {{ filters.endDate }} -->
+<input class="hide" type="text" id="fro" ng-model="filters.dates.start" />    <!-- {{ filters.dates.start}} --> <br/>
+<input class="hide" type="text" id="to"  ng-model="filters.dates.end"/>   <!-- {{ filters.dates.end }} -->
