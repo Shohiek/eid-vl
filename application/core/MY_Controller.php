@@ -23,6 +23,9 @@ class  MY_Controller  extends  MX_Controller {
 	public function filter(){
 		$this->load->view("filters/filter_view");
 	}
+	public function date_filter(){
+		$this->load->view("filters/date_filter_view");
+	}
 	public function footer(){
 		$this->load->view("tmpl_footer_v");
 	}

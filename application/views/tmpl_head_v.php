@@ -13,16 +13,17 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/ngprogress/ngProgress.css');?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/fontawesome/css/font-awesome.css');?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/lato/css/lato.css');?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/angular-ui-select/dist/select.css');?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css');?>">
 
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap-datepicker/css/datepicker3.css');?>">
 
 <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap-datepicker/css/datepicker3.css');?>">
+<!-- <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootcards/dist/css/bootcards-desktop-lite.min.css');?>"> -->
 
 <!-- Calendar -->
 <link rel="stylesheet" href="<?php echo base_url().'assets/bower_components/fullcalendar/dist/fullcalendar.min.css'; ?>"/>
 
-<!-- Javascript -->
-<script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.js');?>"></script>
-<script src="<?php echo base_url('assets/bower_components/semantic-ui/build/packaged/javascript/semantic.js');?>"></script>
-<script src="<?php echo base_url('assets/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js');?>"></script>
 
+
+<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/angular-chart.js/dist/angular-chart.css');?>">

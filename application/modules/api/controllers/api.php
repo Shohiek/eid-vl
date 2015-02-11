@@ -16,24 +16,24 @@ class api extends MY_Controller {
 		}
 	}
 	
-	public function get_region_details(){
+	public function regions(){
 		$result = $this->api_m->get_region_details();
 		print_r($result);
 	}
 	
-	public function get_lab_details(){
+	public function labs(){
 		$result = $this->api_m->get_lab_details();
 		print_r($result);
 		
 	}
 	
-	public function get_district_details(){
+	public function districts(){
 		$result = $this->api_m->get_district_details();
 		print_r($result);
 		
 	}
 	
-	public function get_partner_details(){
+	public function partners(){
 		$result = $this->api_m->get_partner_details();
 		print_r($result);
 
