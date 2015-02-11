@@ -6,7 +6,8 @@ var app = angular
 	'ngSanitize', 
 	'ui.select',
 	'daterangepicker',
-	'chart.js'
+	'chart.js',
+	'highcharts-ng'
 	])
 .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
@@ -63,7 +64,8 @@ var app = angular
 	})
 	.state('Dashboard.tat',{
 		url: 'tat',
-		templateUrl: 'dashboard/dashboard_item'
+		templateUrl: 'dashboard/dashboard_item_singular',
+		controller:'TATCtrl'
 	})
 	.state('Dashboard.facilitiesTests',{
 		url: 'facilitiesTests',
@@ -92,7 +94,8 @@ var app = angular
 	})
 	.state('Dashboard.VLtat',{
 		url: 'VL/tat',
-		templateUrl: 'dashboard/dashboard_item'
+		templateUrl: 'dashboard/dashboard_item_singular',
+		controller:'TATCtrl'
 	})
 	.state('Dashboard.VLfacilitiesTests',{
 		url: 'VL/facilitiesTests',
@@ -126,7 +129,8 @@ var app = angular
 	})
 	.state('Dashboard.EIDtat',{
 		url: 'EID/tat',
-		templateUrl: 'dashboard/dashboard_item'
+		templateUrl: 'dashboard/dashboard_item_singular',
+		controller:'TATCtrl'
 	})
 	.state('Dashboard.EIDfacilitiesTests',{
 		url: 'EID/facilitiesTests',

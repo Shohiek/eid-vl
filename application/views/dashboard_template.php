@@ -33,6 +33,8 @@
 <script src="<?php echo base_url('assets/bower_components/moment/moment.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/Chart.js/Chart.min.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/angular-chart.js/dist/angular-chart.js');?>"></script>
+<script src="<?php echo base_url('assets/bower_components/highcharts/highcharts.js');?>"></script>
+<script src="<?php echo base_url('assets/bower_components/highcharts-ng/dist/highcharts-ng.min.js');?>"></script>
 
 
 <!--app -->
@@ -43,6 +45,7 @@
 <script src="<?php echo base_url('scripts/controllers/dashboardTestTrendsCtrl.js');?>"></script>
 <script src="<?php echo base_url('scripts/controllers/filtersCtrl.js');?>"></script>
 <script src="<?php echo base_url('scripts/controllers/navbarCtrl.js');?>"></script>
+<script src="<?php echo base_url('scripts/controllers/TATCtrl.js');?>"></script>
 
 
 <!--Factories, Services and providers -->

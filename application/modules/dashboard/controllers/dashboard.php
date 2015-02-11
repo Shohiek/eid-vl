@@ -47,4 +47,9 @@ class dashboard extends MY_Controller {
 
 		$this->load->view("dashboard_item_v");
 	}
+
+	public function dashboard_item_singular(){
+
+		$this->load->view("dashboard_item_singular_v");
+	}
 }

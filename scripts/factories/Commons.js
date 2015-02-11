@@ -10,7 +10,7 @@ app.factory('Commons', ['$location',function($location){
   };
   Commons.getSpecActiveClass = function (path) {
     // console.log(path+'-----'+$location.path());
-    console.log($location.path().substr(-path.length));
+    // console.log($location.path().substr(-path.length));
     if ($location.path().substr(-path.length) == path) {
       return "active"
     } else {
