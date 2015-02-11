@@ -42,9 +42,11 @@
 <script src="<?php echo base_url('scripts/controllers/dashboardCtrl.js');?>"></script>
 <script src="<?php echo base_url('scripts/controllers/dashboardTestTrendsCtrl.js');?>"></script>
 <script src="<?php echo base_url('scripts/controllers/filtersCtrl.js');?>"></script>
+<script src="<?php echo base_url('scripts/controllers/navbarCtrl.js');?>"></script>
 
 
 <!--Factories, Services and providers -->
 <script src="<?php echo base_url('scripts/factories/Filters.js');?>"></script>
+<script src="<?php echo base_url('scripts/factories/Commons.js');?>"></script>
 
 </html>

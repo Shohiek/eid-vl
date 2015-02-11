@@ -14,9 +14,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ng-class="getClass('/')"><a href="#Dashboard"><i class="fa fa-dashboard fa-sm"></i> Dashboard (Analytics)<span class="sr-only"></span></a></li>
-        <li ng-class="getClass('/lab')"><a href="#lab"><i class="fa fa-flask fa-sm"></i> Laboratories</a></li>
-        <li ng-class="getClass('/facilities')"><a href="#facilities"><i class="fa fa-hospital-o fa-sm"></i> Facilities</a></li>
+        <li ng-class="getActiveClass('/') || 
+                      getActiveClass('/') || 
+                      getActiveClass('/summary')"><a href="#Dashboard"><i class="fa fa-dashboard fa-sm"></i> Dashboard (Analytics)<span class="sr-only"></span></a></li>
+        <li ng-class="getActiveClass('/lab')"><a href="#lab"><i class="fa fa-flask fa-sm"></i> Laboratories</a></li>
+        <li ng-class="getActiveClass('/facilities')"><a href="#facilities"><i class="fa fa-hospital-o fa-sm"></i> Facilities</a></li>
         <!-- <li><a href="#kits">Kits</a></li> -->
       </ul>
       <form class="navbar-form navbar-left" role="search">
@@ -27,7 +29,7 @@
       </form>
       <ul class="nav navbar-nav nav-primary navbar-right">
         <li class=" active" title="Todays Date">
-          
+
           <a data-toggle="dropdown " href="#" class="dropdown-toggle ">
             <center>
               <span class="user-info">

@@ -1,4 +1,4 @@
-app.controller('dashboardCtrl',['$scope','$timeout','ngProgress', 'Filters',function($scope,$timeout,ngProgress,Filters){
+app.controller('dashboardCtrl',['$scope','$timeout','ngProgress', 'Filters','Commons',function($scope,$timeout,ngProgress,Filters,Commons){
 
 	// ngProgress.color('#cfba13');
 	ngProgress.start();
@@ -10,10 +10,13 @@ app.controller('dashboardCtrl',['$scope','$timeout','ngProgress', 'Filters',func
 
 	$scope.visible = 	function(page){
 
-		if((page=="tests" || page=="tat" || page=="facilitiesTests" || page=="labPerformance"|| page=="SampleType" ||page=="BF") && Filters.programs.selected.initials=="EID"){
+		if((page=="tests" || page=="tat" || page=="facilitiesTests" || page=="labPerformance"|| page=="SampleType" ||page=="BF") && (typeof Filters.programs.selected != 'undefined') && Filters.programs.selected.initials=="EID"){
 			return true;
 		}
-		else if((page=="tests" || page=="tat" || page=="facilitiesTests" || page=="labPerformance"|| page=="TBCoinf"|| page=="VLSuppression"|| page=="SampleType") && Filters.programs.selected.initials=="VL"){
+		else if((page=="tests" || page=="tat" || page=="facilitiesTests" || page=="labPerformance"|| page=="TBCoinf"|| page=="VLSuppression"|| page=="SampleType") && (typeof Filters.programs.selected != 'undefined') && Filters.programs.selected.initials=="VL"){
+			return true;
+		}
+		else if((page=="tests" || page=="tat" || page=="facilitiesTests" || page=="labPerformance"||  page=="SampleType")){
 			return true;
 		}
 		else{
@@ -24,6 +27,8 @@ app.controller('dashboardCtrl',['$scope','$timeout','ngProgress', 'Filters',func
 	$scope.filters.programs.selected = function(){
 		return Filters.programs.selected;
 	}
+	$scope.getActiveClass = Commons.getActiveClass;
+	$scope.getSpecActiveClass = Commons.getSpecActiveClass;
 
 
 }])

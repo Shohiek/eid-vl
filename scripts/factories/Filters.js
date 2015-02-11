@@ -11,4 +11,4 @@ app.factory('Filters',['$http', function($http){
   };
 
   return Filters;
-}]);
+}])

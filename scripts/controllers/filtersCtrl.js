@@ -3,7 +3,7 @@ app.controller('filtersCtrl',['$scope','$location', 'Filters', function($scope,$
 	Filters.programs= {};
 	Filters.entities= {};
 	Filters.dates= {}; 	
-	Filters.programs.selected =	{ name: 'Viral Load', 				initials:'VL' };			//all these needs to be put in a provider
+	Filters.programs.selected =	{ name: '', 				initials:'' };			//all these needs to be put in a provider
 	Filters.dates.start = ''
 	Filters.dates.end = ''
 
@@ -54,11 +54,18 @@ app.controller('filtersCtrl',['$scope','$location', 'Filters', function($scope,$
 
 		Filters.entities.selected = undefined;
 		Filters.programs.selected = undefined;
+
+		$scope.bindProgramSelected()
 	};
 
 	$scope.bindProgramSelected= function (){
 		Filters.programs.selected =$scope.filters.programs.selected 
-		$location.path( Filters.programs.selected.initials );
+		// console.log($scope.filters.programs.selected);
+		if(typeof Filters.programs.selected != 'undefined'){
+			$location.url($scope.filters.programs.selected.initials );
+		}else{
+			$location.url("");
+		}
 	}
 	$scope.bindDates = function(st,en){
 		$scope.filters.dates.start = st
@@ -67,7 +74,7 @@ app.controller('filtersCtrl',['$scope','$location', 'Filters', function($scope,$
 		Filters.dates.start = st
 		Filters.dates.end = en	}
 
-}])
+	}])
 .filter('entityFilter', function() {
 	return function(items, props) {
 		var out = [];

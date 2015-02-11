@@ -22,7 +22,8 @@ var app = angular
 				controller:'dashboardCtrl'
 			},
 			'navbar':{
-				templateUrl: 'dashboard/navbar'	
+				templateUrl: 'dashboard/navbar',
+				controller: 'navbarCtrl'
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -42,13 +43,48 @@ var app = angular
 		}
 	})
 
-	.state('Dashboard.tests',{
+
+
+	//common routes
+	.state('Dashboard.main',{
 		url: '',
 		templateUrl: 'dashboard/dashboard_item',
 		controller:'dashboardTestTrendsCtrl'		
 	})
-	
+	.state('Dashboard.summary',{
+		url: 'summary',
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'		
+	})
+	.state('Dashboard.tests',{
+		url: 'tests',
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'		
+	})
+	.state('Dashboard.tat',{
+		url: 'tat',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.facilitiesTests',{
+		url: 'facilitiesTests',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.labPerformance',{
+		url: 'labPerformance',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.SampleType',{
+		url: 'SampleType',
+		templateUrl: 'dashboard/dashboard_item'
+	})
 
+
+	//vl routes
+	.state('Dashboard.VL',{
+		url: 'VL',
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'
+	})
 	.state('Dashboard.VLtests',{
 		url: 'VL/tests',
 		templateUrl: 'dashboard/dashboard_item',
@@ -79,7 +115,11 @@ var app = angular
 		templateUrl: 'dashboard/dashboard_item'
 	})
 
-
+	//eid routes
+	.state('Dashboard.EID',{
+		url: 'EID',
+		templateUrl: 'dashboard/dashboard_item'
+	})
 	.state('Dashboard.EIDtests',{
 		url: 'EID/tests',
 		templateUrl: 'dashboard/dashboard_item'
@@ -116,6 +156,7 @@ var app = angular
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
+				controller: 'navbarCtrl'
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -139,7 +180,8 @@ var app = angular
 				// controller: ngProgress_Test
 			},
 			'navbar':{
-				templateUrl: 'dashboard/navbar'
+				templateUrl: 'dashboard/navbar',
+				controller: 'navbarCtrl'
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
