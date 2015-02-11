@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| PRESET CD4 SQL LIBRARY
+| PRESET EID-vl SQL LIBRARY
 |--------------------------------------------------------------------------
 |
 | Path to the script directory.  Relative to the CI front controller.
@@ -255,8 +255,4 @@ $db_procedures["get_lab_details"]  		=
 					";		
 
 $config["procedures_sql"] = $db_procedures;
-		// $sql 	=	"CALL get_uploads_dt($user_group_id,$user_filter_used)";
-// calling procedures from model
-		// return $res 	=	R::getAll($sql);
-
 ?>
