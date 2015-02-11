@@ -17,8 +17,8 @@
 
 			<div class="panel-footer">
 				<button ng-click="test()" class="btn btn-info btn-block">
-					<i class="fa fa-bar-chart-o"></i>
-					Show Chart
+					<i class="fa fa-table"></i>
+					Show Data
 				</button>
 			</div>
 
@@ -45,8 +45,8 @@
 
 			<div class="panel-footer">
 				<button class="btn btn-info btn-block">
-					<i class="fa fa-bar-chart-o"></i>
-					Show Chart
+					<i class="fa fa-table"></i>
+					Show Data
 				</button>
 			</div>
 

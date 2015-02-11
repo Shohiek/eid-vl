@@ -38,7 +38,9 @@ app.controller('TATCtrl',['$scope', 'Filters',function($scope,Filters){
 	$scope.chartConfig = {
 		options: {
 			chart: {
-				type: 'bar'
+				type: 'bar',
+				// width: "1000",
+				// height: "280"
 			}
 		},
 		series: [{
