@@ -1,4 +1,4 @@
-CREATE TABLE `hivpc_data_export` (
+CREATE TABLE  IF NOT EXISTS `hivpc_data_export` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lab_no` varchar(50) NOT NULL,
   `lab_name` varchar(50) NOT NULL,

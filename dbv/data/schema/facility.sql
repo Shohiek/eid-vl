@@ -1,4 +1,4 @@
-CREATE TABLE `facility` (
+CREATE TABLE  IF NOT EXISTS `facility` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `mfl_code` varchar(11) NOT NULL,

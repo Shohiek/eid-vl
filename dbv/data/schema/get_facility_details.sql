@@ -1,7 +1,11 @@
+DROP PROCEDURE IF EXISTS `get_facility_details`;
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_facility_details`()
 BEGIN
 		SELECT 
 			`fac`.`id`,
+            `fac`.`name`,
+            
             `fac`.`name` AS `facility_name`,
             `fac`.`district_id`,
             `fac`.`partner_id`,
@@ -13,7 +17,12 @@ BEGIN
             `dis`.`name` AS `district_name`,
             `dis`.`region_id`,
             `par`.`name` AS `partner_name`,
-            `reg`.`name` AS `region_name`
+            `reg`.`name` AS `region_name`,
+
+            --  delimiters for filters
+
+            '1' AS `filter_type`,
+            `fac`.`id`  AS `filter_id`
 
 		FROM `facility` `fac`
         LEFT JOIN `district` `dis`
@@ -22,4 +31,4 @@ BEGIN
         ON `par`.`id` = `fac`.`partner_id`
         LEFT JOIN `region` `reg`
         ON `reg`.`id` = `dis`.`region_id`;
-    END
+    END;

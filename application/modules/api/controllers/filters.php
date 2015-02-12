@@ -29,7 +29,8 @@ class filters extends MY_Controller {
 	public function entities(){
 		$entity_values = [];
 		$entities = $this->api_m->get_entities();
-		// print_r($entities);die;
+
+		// echo "<pre>";
 		$i = 0;
 		foreach ($entities as $key => $value) {
 			if($value['grp_type'] == 'Regions'){
@@ -37,26 +38,36 @@ class filters extends MY_Controller {
 				$entity_values[$i]['email'] = null;
 				$entity_values[$i]['phone'] = null;
 				$entity_values[$i]['type'] = $value['grp_type']; 
+				$entity_values[$i]['filter_type'] = $value['filter_type'];
+				$entity_values[$i]['filter_id'] = $value['filter_id'];
 			}else if($value['grp_type'] == 'Districts'){
 				$entity_values[$i]['name'] = $value['dis_name'];
 				$entity_values[$i]['email'] = null;
 				$entity_values[$i]['phone'] = null;
 				$entity_values[$i]['type'] = $value['grp_type'];	
+				$entity_values[$i]['filter_type'] = $value['filter_type'];
+				$entity_values[$i]['filter_id'] = $value['filter_id'];
 			}else if($value['grp_type'] == 'Implementing Partners'){
 				$entity_values[$i]['name'] = $value['partner_name'];
 				$entity_values[$i]['email'] = null;
 				$entity_values[$i]['phone'] = null;
 				$entity_values[$i]['type'] = $value['grp_type'];
+				$entity_values[$i]['filter_type'] = $value['filter_type'];
+				$entity_values[$i]['filter_id'] = $value['filter_id'];
 			}else if($value['grp_type'] == 'HPV Labs'){
 				$entity_values[$i]['name'] = $value['lab_name'];
 				$entity_values[$i]['email'] = $value['lab_email'];
 				$entity_values[$i]['phone'] = null;
 				$entity_values[$i]['type'] = $value['grp_type'];
+				$entity_values[$i]['filter_type'] = $value['filter_type'];
+				$entity_values[$i]['filter_id'] = $value['filter_id'];
 			}else if($value['grp_type'] == 'Facilities'){
 				$entity_values[$i]['name'] = $value['facility_name'];
 				$entity_values[$i]['email'] = $value['facility_email'];
 				$entity_values[$i]['phone'] = $value['facility_phone'];
 				$entity_values[$i]['type'] = $value['grp_type'];
+				$entity_values[$i]['filter_type'] = $value['filter_type'];
+				$entity_values[$i]['filter_id'] = $value['filter_id'];
 			}
 			$i++;
 		}
