@@ -1,8 +1,13 @@
-angular
+var app = angular
 .module('dashboard',[
 	'ngRoute',
 	'ui.router',
-	'ngProgress'
+	'ngProgress',
+	'ngSanitize', 
+	'ui.select',
+	'daterangepicker',
+	'chart.js',
+	'highcharts-ng'
 	])
 .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
@@ -14,11 +19,12 @@ angular
 		abstract: true,
 		views:{
 			'main':{
-				templateUrl: 'dashboard/dashboard_view'
+				templateUrl: 'dashboard/dashboard_view',
+				controller:'dashboardCtrl'
 			},
 			'navbar':{
-				templateUrl: 'dashboard/navbar',				
-				controller: navbar_Ctrl		
+				templateUrl: 'dashboard/navbar',
+				controller: 'navbarCtrl'
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -28,10 +34,7 @@ angular
 			},
 			'filter':{
 				templateUrl: 'dashboard/filter',
-				controller: "dashboardCtrl"
-			},
-			'date_filter':{
-				templateUrl: 'dashboard/date_filter'
+				controller: "filtersCtrl"
 			},
 			'footer':{
 				templateUrl: 'dashboard/footer',
@@ -41,13 +44,28 @@ angular
 		}
 	})
 
-	.state('Dashboard.tests',{
+
+
+	//common routes
+	.state('Dashboard.main',{
 		url: '',
-		templateUrl: 'dashboard/dashboard_item'
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'		
+	})
+	.state('Dashboard.summary',{
+		url: 'summary',
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'		
+	})
+	.state('Dashboard.tests',{
+		url: 'tests',
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'		
 	})
 	.state('Dashboard.tat',{
 		url: 'tat',
-		templateUrl: 'dashboard/dashboard_item'
+		templateUrl: 'dashboard/dashboard_item_singular',
+		controller:'TATCtrl'
 	})
 	.state('Dashboard.facilitiesTests',{
 		url: 'facilitiesTests',
@@ -57,20 +75,77 @@ angular
 		url: 'labPerformance',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.TBCoinf',{
-		url: 'TBCoinf',
-		templateUrl: 'dashboard/dashboard_item'
-	})
-	.state('Dashboard.VLSuppression',{
-		url: 'VLSuppression',
-		templateUrl: 'dashboard/dashboard_item'
-	})
 	.state('Dashboard.SampleType',{
 		url: 'SampleType',
 		templateUrl: 'dashboard/dashboard_item'
 	})
-	.state('Dashboard.BF',{
-		url: 'BF',
+
+
+	//vl routes
+	.state('Dashboard.VL',{
+		url: 'VL',
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'
+	})
+	.state('Dashboard.VLtests',{
+		url: 'VL/tests',
+		templateUrl: 'dashboard/dashboard_item',
+		controller:'dashboardTestTrendsCtrl'
+	})
+	.state('Dashboard.VLtat',{
+		url: 'VL/tat',
+		templateUrl: 'dashboard/dashboard_item_singular',
+		controller:'TATCtrl'
+	})
+	.state('Dashboard.VLfacilitiesTests',{
+		url: 'VL/facilitiesTests',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.VLlabPerformance',{
+		url: 'VL/labPerformance',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.VLTBCoinf',{
+		url: 'VL/TBCoinf',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.VLVLSuppression',{
+		url: 'VL/VLSuppression',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.VLSampleType',{
+		url: 'VL/SampleType',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+
+	//eid routes
+	.state('Dashboard.EID',{
+		url: 'EID',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDtests',{
+		url: 'EID/tests',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDtat',{
+		url: 'EID/tat',
+		templateUrl: 'dashboard/dashboard_item_singular',
+		controller:'TATCtrl'
+	})
+	.state('Dashboard.EIDfacilitiesTests',{
+		url: 'EID/facilitiesTests',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDlabPerformance',{
+		url: 'EID/labPerformance',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDSampleType',{
+		url: 'EID/SampleType',
+		templateUrl: 'dashboard/dashboard_item'
+	})
+	.state('Dashboard.EIDBF',{
+		url: 'EID/BF',
 		templateUrl: 'dashboard/dashboard_item'
 	})
 
@@ -85,7 +160,7 @@ angular
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
-				controller: navbar_Ctrl
+				controller: 'navbarCtrl'
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -110,7 +185,7 @@ angular
 			},
 			'navbar':{
 				templateUrl: 'dashboard/navbar',
-				controller: navbar_Ctrl
+				controller: 'navbarCtrl'
 			},
 			'head':{
 				templateUrl: 'dashboard/head_template',
@@ -150,17 +225,3 @@ angular
 		}
 	});
 }]);
-
-
-var navbar_Ctrl	=	['$scope','$location', function($scope,$location){
-
-	$scope.getClass = function(path) {
-		// alert($location.path() +"-"+ path);
-		if ($location.path() == path) {
-			return "active"
-		} else {
-			return ""
-		}
-	}
-
-}]
