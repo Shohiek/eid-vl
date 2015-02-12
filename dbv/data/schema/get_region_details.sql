@@ -7,6 +7,7 @@ BEGIN
 			    `reg`.`name`,
 				`reg`.`id` AS `region_id`,
 			    `reg`.`name` AS `region_name`,
+			    `reg`.`hc_key`,
 --  delimiters for filters
 
     			'2' AS `filter_type`,
