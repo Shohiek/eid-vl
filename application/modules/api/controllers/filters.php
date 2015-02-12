@@ -14,7 +14,7 @@ class filters extends MY_Controller {
 	}
 
 	public function index(){
-		echo '<pre/>
+		echo '
 		{
 			"entities" 	: 	';
 			$this->entities(); echo ',
@@ -32,27 +32,27 @@ class filters extends MY_Controller {
 		// print_r($entities);die;
 		$i = 0;
 		foreach ($entities as $key => $value) {
-			if($value['grp_type'] == 'region'){
+			if($value['grp_type'] == 'Regions'){
 				$entity_values[$i]['name'] = $value['name'];
-				$entity_values[$i]['email'] = 'null';
-				$entity_values[$i]['phone'] = 'null';
+				$entity_values[$i]['email'] = null;
+				$entity_values[$i]['phone'] = null;
 				$entity_values[$i]['type'] = $value['grp_type']; 
-			}else if($value['grp_type'] == 'district'){
+			}else if($value['grp_type'] == 'Districts'){
 				$entity_values[$i]['name'] = $value['dis_name'];
-				$entity_values[$i]['email'] = 'null';
-				$entity_values[$i]['phone'] = 'null';
+				$entity_values[$i]['email'] = null;
+				$entity_values[$i]['phone'] = null;
 				$entity_values[$i]['type'] = $value['grp_type'];	
-			}else if($value['grp_type'] == 'partner'){
+			}else if($value['grp_type'] == 'Implementing Partners'){
 				$entity_values[$i]['name'] = $value['partner_name'];
-				$entity_values[$i]['email'] = 'null';
-				$entity_values[$i]['phone'] = 'null';
+				$entity_values[$i]['email'] = null;
+				$entity_values[$i]['phone'] = null;
 				$entity_values[$i]['type'] = $value['grp_type'];
-			}else if($value['grp_type'] == 'lab'){
-				$entity_values[$i]['name'] = $value['name'];
-				$entity_values[$i]['email'] = 'null';
-				$entity_values[$i]['phone'] = 'null';
+			}else if($value['grp_type'] == 'HPV Labs'){
+				$entity_values[$i]['name'] = $value['lab_name'];
+				$entity_values[$i]['email'] = $value['lab_email'];
+				$entity_values[$i]['phone'] = null;
 				$entity_values[$i]['type'] = $value['grp_type'];
-			}else if($value['grp_type'] == 'facility'){
+			}else if($value['grp_type'] == 'Facilities'){
 				$entity_values[$i]['name'] = $value['facility_name'];
 				$entity_values[$i]['email'] = $value['facility_email'];
 				$entity_values[$i]['phone'] = $value['facility_phone'];
@@ -60,7 +60,7 @@ class filters extends MY_Controller {
 			}
 			$i++;
 		}
-		print_r($entity_values);
+		echo json_encode($entity_values);
 	
 		return $entity_values;
 	}	
