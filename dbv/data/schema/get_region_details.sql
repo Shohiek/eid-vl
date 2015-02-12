@@ -11,7 +11,7 @@ BEGIN
 --  delimiters for filters
 
     			'2' AS `filter_type`,
-    			`dist`.`id`  AS `filter_id`
+    			`reg`.`id`  AS `filter_id`
 
 			FROM
 				`region` `reg`;
