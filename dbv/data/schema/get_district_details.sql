@@ -1,6 +1,5 @@
-USE delimiter $$;
-CREATE PROCEDURE  get_district_details () 
-						BEGIN 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_district_details`()
+BEGIN 
 							SELECT 
 							     `dist`.`name` AS `dis_name`,
 							     `dist`.`region_id`,
@@ -59,4 +58,4 @@ CREATE PROCEDURE  get_district_details ()
                             ON
                             	`fac_t`.`id` = `fac`.`facility_type_id`; 
                             
-						END;
+						END

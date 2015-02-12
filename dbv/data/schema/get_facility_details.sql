@@ -1,6 +1,5 @@
-Use delimiter $$;
-CREATE PROCEDURE  get_facility_details () 
-	BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_facility_details`()
+BEGIN
 		SELECT 
 			`fac`.`id`,
             `fac`.`name` AS `facility_name`,
@@ -29,4 +28,4 @@ CREATE PROCEDURE  get_facility_details ()
         ON `par`.`id` = `fac`.`partner_id`
         LEFT JOIN `region` `reg`
         ON `reg`.`id` = `dis`.`region_id`;
-    END;
+    END

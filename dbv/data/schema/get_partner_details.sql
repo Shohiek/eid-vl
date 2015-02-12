@@ -1,6 +1,5 @@
-USE delimiter $$;
-CREATE PROCEDURE  get_partner_details () 
-		BEGIN 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_partner_details`()
+BEGIN 
 			SELECT 
 				`par`.`id`,
 				`par`.`name` AS `partner_name`,
@@ -57,4 +56,4 @@ CREATE PROCEDURE  get_partner_details ()
 				`facility_type` `fac_t`
 			ON
 				`fac_t`.`id` = `fac`.`facility_type_id`; 
-		END;
+		END

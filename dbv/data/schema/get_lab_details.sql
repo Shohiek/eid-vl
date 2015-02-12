@@ -1,6 +1,5 @@
-USE delimiter $$;
-CREATE PROCEDURE  get_lab_details () 
-	BEGIN 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_lab_details`()
+BEGIN 
 		SELECT 
 			`lab`.`id`,
             `lab`.`name` AS `lab_name`,
@@ -18,4 +17,4 @@ CREATE PROCEDURE  get_lab_details ()
         ON `dist`.`id` = `lab`.`district`
         LEFT JOIN `region` `reg`
         ON `reg`.`id` = `dist`.`region_id`;     
-	END;
+	END
