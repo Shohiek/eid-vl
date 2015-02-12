@@ -16,7 +16,6 @@ CREATE TABLE `hivpc_data_export` (
   `specimen_type` varchar(50) NOT NULL,
   `icd10` varchar(50) NOT NULL,
   `notes` varchar(50) NOT NULL,
-  `ref_no` varchar(50) NOT NULL,
   `reviewed_by` varchar(50) NOT NULL,
   `reviewed_date` timestamp NOT NULL,
   `entered_by` varchar(50) NOT NULL,
