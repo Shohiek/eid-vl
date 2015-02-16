@@ -1,4 +1,4 @@
-CREATE TABLE `aauth_perms` (
+CREATE TABLE  IF NOT EXISTS  `aauth_perms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
   `definition` text,

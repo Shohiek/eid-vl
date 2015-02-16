@@ -37,31 +37,31 @@ class api_m extends MY_Model{
 				
 		$dis_result = $this->get_district_details();
 		foreach ($dis_result as $key => $value) {
-			$value['grp_type'] = 'district';
+			$value['grp_type'] = 'Districts';
 			array_push($result,$value);
 		}
 		
 		$reg_result = $this->get_region_details();
 		foreach($reg_result as $key => $value1){
-			$value1['grp_type'] = 'region';
+			$value1['grp_type'] = 'Regions';
 			array_push($result,$value1);	
 		}
 		
 		$lab_result = $this->get_lab_details();
 		foreach($lab_result as $key => $value2){
-			$value2['grp_type'] = 'lab';
+			$value2['grp_type'] = 'HPV Labs';
 			array_push($result,$value2);	
 		}
 		
 		$par_result = $this->get_partner_details();
 		foreach($par_result as $key => $value3){
-			$value3['grp_type'] = 'partner';
+			$value3['grp_type'] = 'Implementing Partners';
 			array_push($result,$value3);	
 		}
 		
 		$fac_result = $this->get_facility_details();
 		foreach($fac_result as $key => $value4){
-			$value4['grp_type'] = 'facility';
+			$value4['grp_type'] = 'Facilities';
 			array_push($result,$value4);	
 		}
 		return $result;

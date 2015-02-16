@@ -1,4 +1,4 @@
-CREATE TABLE `aauth_groups` (
+CREATE TABLE  IF NOT EXISTS `aauth_groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
   PRIMARY KEY (`id`),

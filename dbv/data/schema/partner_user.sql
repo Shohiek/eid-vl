@@ -1,4 +1,4 @@
-CREATE TABLE `partner_user` (
+CREATE TABLE  IF NOT EXISTS `partner_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL COMMENT 'FK to user',
   `partner_id` int(11) NOT NULL COMMENT 'FK to partner',

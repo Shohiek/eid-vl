@@ -1,4 +1,4 @@
-CREATE TABLE `region_user` (
+CREATE TABLE  IF NOT EXISTS `region_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL COMMENT 'FK to user',
   `region_id` int(11) NOT NULL COMMENT 'FK to region',
