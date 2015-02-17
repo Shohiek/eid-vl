@@ -2,16 +2,13 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class Login extends MY_Controller {
-
-	public $login_status = false;
+class login extends MY_Controller {	
 
 	function __construct() {
-
 		parent::__construct();		
 	}
 
 	public function index() {
-		$this->load->view("login_v");
+		$this->load->view('login_v');
 	}
 }
