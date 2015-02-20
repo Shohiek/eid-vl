@@ -29,6 +29,4 @@ app.controller('dashboardCtrl',['$scope','$timeout','ngProgress', 'Filters','Com
 	}
 	$scope.getActiveClass = Commons.getActiveClass;
 	$scope.getSpecActiveClass = Commons.getSpecActiveClass;
-
-
 }])

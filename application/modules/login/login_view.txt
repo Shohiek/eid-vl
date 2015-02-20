@@ -1,0 +1,64 @@
+ <script src="<?php echo base_url('assets/bower_components/angular-ui-router/release/angular-ui-router.js'); ?>"></script>
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
+ <style>
+	body{
+		
+	}
+	#form-container{
+		width: 30%; 
+		margin-top:2%; 
+		margin-left: auto; 
+		margin-right: auto;
+		background-color:#C5EFF7;
+		padding: 2%;
+		-webkit-border-radius: 12px; 
+  		-moz-border-radius: 12px; 
+  		border-radius: 12px;
+	}
+</style>
+
+ <html ng-app="dashboard">
+	 <head>
+		<title>{{title }}</title>
+		<script src="<?php echo base_url('assets/bower_components/angular/angular.min.js') ?>"></script>
+		<script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.min.js') ?>"></script>
+		
+		<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>"
+		<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap/dist/css/bootstrap.theme.css'); ?>"
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row" style="background-color: #e7e7e7; height: 10%;" ui-view="main" >
+			</div>
+			
+			<div class="row">
+				<div class=".col-md-3 .col-md-offset-3" id="form-container">
+					<center> United Republic of Tanzania</center>
+					<img src="<?php echo base_url('assets/images/tz.png'); ?>" style="width 10%; height: 10%; margin-left: 45%; margin-bottom: 5%;" />
+					<center>{{Name of the particular system}}</center>
+					<form>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Username</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						</div>
+						<center>
+							<button type="button" class="btn btn-primary">
+								Login
+							</button>
+						</center>
+					</form>
+				</div>
+			</div>
+			
+			
+			<div class="row" style="position: absolute; left: 40%; right: 40%; bottom: 0%;">
+				<?php echo $this->config->item("copyrights") ?>
+			</div>
+		</div>
+	</body>
+</html>

@@ -35,6 +35,9 @@
 <script src="<?php echo base_url('assets/bower_components/angular-chart.js/dist/angular-chart.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/highcharts/highcharts.js');?>"></script>
 <script src="<?php echo base_url('assets/bower_components/highcharts-ng/dist/highcharts-ng.min.js');?>"></script>
+<script src="<?php echo base_url('assets/bower_components/angular-formly/dist/formly.min.js');?>"></script>
+<script src="<?php echo base_url('assets/bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.min.js');?>"></script>
+
 
 
 <!--app -->
@@ -46,7 +49,7 @@
 <script src="<?php echo base_url('scripts/controllers/filtersCtrl.js');?>"></script>
 <script src="<?php echo base_url('scripts/controllers/navbarCtrl.js');?>"></script>
 <script src="<?php echo base_url('scripts/controllers/TATCtrl.js');?>"></script>
-
+<script src="<?php echo base_url('scripts/controllers/loginCtrl.js');?>"></script>
 
 <!--Factories, Services and providers -->
 <script src="<?php echo base_url('scripts/factories/Filters.js');?>"></script>

@@ -7,13 +7,39 @@ var app = angular
 	'ui.select',
 	'daterangepicker',
 	'chart.js',
-	'highcharts-ng'
+	'highcharts-ng',
+	'formly'
 	])
+	
 .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
 	$urlRouterProvider.otherwise('/');
-
+	//Login
 	$stateProvider
+	.state('Login',{
+		url: '/login',		
+		views:{
+			'main':{
+				templateUrl: 'login/login_v',
+				controller: 'loginCtrl'
+			},
+			'navbar':{
+				templateUrl: 'login/nav_bar'
+			},
+			'head':{
+				templateUrl: 'dashboard/head_template',
+				controller: ['$scope', function($scope){
+					$scope.title= "EID/Viral Load Login"
+				}]
+			},
+			'footer':{
+				templateUrl: 'dashboard/footer',
+				controller: ['$scope', function($scope){
+				}]
+			}
+		}
+	})
+	
 	.state('Dashboard',{
 		url: '/',		
 		abstract: true,
@@ -43,9 +69,7 @@ var app = angular
 			}
 		}
 	})
-
-
-
+	
 	//common routes
 	.state('Dashboard.main',{
 		url: '',
