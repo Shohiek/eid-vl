@@ -7,8 +7,7 @@ var app = angular
 	'ui.select',
 	'daterangepicker',
 	'chart.js',
-	'highcharts-ng',
-	'formly'
+	'highcharts-ng'
 	])
 	
 .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
@@ -29,7 +28,7 @@ var app = angular
 			'head':{
 				templateUrl: 'dashboard/head_template',
 				controller: ['$scope', function($scope){
-					$scope.title= "EID/Viral Load Login"
+					$scope.title= "EID/VL | Login"
 				}]
 			},
 			'footer':{

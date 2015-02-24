@@ -5,7 +5,8 @@ if (!defined('BASEPATH'))
 class login extends MY_Controller {	
 
 	function __construct() {
-		parent::__construct();		
+		parent::__construct();
+		$this->load->library("Aauth");		
 	}
 
 	public function index() {
@@ -22,5 +23,16 @@ class login extends MY_Controller {
 	
 	public function login_v(){
 		$this->load->view('login_v');
+	}
+	
+	public function authenticate(){
+		$username = $_POST['username'];
+		$password = $_POST['username'];
+				
+	 	if ($this->aauth->login($username, $password)){
+            echo 'Logged in';
+        }else{
+            echo 'Invalid username password combination';
+		}
 	}
 }
