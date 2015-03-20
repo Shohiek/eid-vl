@@ -1,4 +1,4 @@
-CREATE TABLE `aauth_pms` (
+CREATE TABLE IF NOT EXISTS  `aauth_pms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sender_id` int(11) NOT NULL,
   `receiver_id` int(11) NOT NULL,

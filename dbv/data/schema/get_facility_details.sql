@@ -1,17 +1,14 @@
-Use delimiter $$;
-CREATE PROCEDURE  get_facility_details () 
-	BEGIN
+DROP PROCEDURE IF EXISTS `get_facility_details`;
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_facility_details`()
+BEGIN
 		SELECT 
 			`fac`.`id`,
+            `fac`.`name`,
+            
             `fac`.`name` AS `facility_name`,
-            `fac`.`mfl_code`,
-            `fac`.`site_prefix`,
             `fac`.`district_id`,
             `fac`.`partner_id`,
-            `fac`.`facility_type_id`,
-            `fac`.`lab_id`,
-            `fac`.`level`,
-            `fac`.`central_site_id`,
             `fac`.`email` AS `facility_email`,
             `fac`.`phone` AS `facility_phone`,
             `fac`.`rollout_status`,
@@ -20,7 +17,12 @@ CREATE PROCEDURE  get_facility_details ()
             `dis`.`name` AS `district_name`,
             `dis`.`region_id`,
             `par`.`name` AS `partner_name`,
-            `reg`.`name` AS `region_name`
+            `reg`.`name` AS `region_name`,
+
+            --  delimiters for filters
+
+            '1' AS `filter_type`,
+            `fac`.`id`  AS `filter_id`
 
 		FROM `facility` `fac`
         LEFT JOIN `district` `dis`

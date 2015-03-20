@@ -1,4 +1,4 @@
-CREATE TABLE `aauth_users` (
+CREATE TABLE  IF NOT EXISTS `aauth_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` text NOT NULL,
   `pass` text NOT NULL,

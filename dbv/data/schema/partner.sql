@@ -1,4 +1,4 @@
-CREATE TABLE `partner` (
+CREATE TABLE  IF NOT EXISTS `partner` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `phone` varchar(50) NOT NULL,

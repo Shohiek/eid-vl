@@ -1,11 +1,16 @@
-<form class="formly"
-      role="form">
-	<formly-field ng-repeat="field in fields"
-	              options="field"
-	              form-result="result"
-	              form-id="options.uniqueFormId"
-	              ng-if="!field.hide"
-	              index="$index">
-	</formly-field>
-	<div ng-transclude></div>
-</form>
+<ng-form class="formly"
+         name="form"
+         role="form">
+  <div formly-field
+       ng-repeat="field in fields track by $index"
+       ng-if="!field.hide"
+       class="formly-field {{field.type ? 'formly-field-' + field.type : ''}}"
+       options="field"
+       model="field.model || model"
+       fields="fields"
+       form="form"
+       form-id="formId"
+       index="$index">
+  </div>
+  <div ng-transclude></div>
+</ng-form>
