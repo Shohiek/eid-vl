@@ -25,6 +25,10 @@ class login extends MY_Controller {
 		$this->load->view('login_v');
 	}
 	
+	public function lims_login(){
+		$this->load->view('lims_login_v');
+	}
+	
 	public function authenticate(){
 		$username = $_POST['username'];
 		$password = $_POST['username'];

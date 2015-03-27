@@ -17,7 +17,10 @@ class dashboard extends MY_Controller {
 	public function dashboard_view(){
 		$this->load->view("dashboard_v");
 	}
-
+	public function page1(){
+		$this->load->view('page1');
+	}
+	
 	public function tests(){
 		echo "Test";	
 	}

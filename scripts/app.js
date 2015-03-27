@@ -12,9 +12,39 @@ var app = angular
 	
 .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
-	$urlRouterProvider.otherwise('/');
-	//Login
+	$urlRouterProvider.otherwise('/');	
 	$stateProvider
+	//LIMS Login	
+	.state('limsLogin',{
+		url: '/lims_login',	
+		views:{
+			'main':{
+				templateUrl: 'login/lims_login',
+				controller: ['$scope', function($scope){
+					$scope.pageTitle= "LIMS/VL | Login"
+					$scope.application = 'Lab Information System Management/Viral Load'
+					$scope.Title = 'United Republic of Tanzania'
+				}]
+			},
+			'navbar':{
+				templateUrl: 'login/nav_bar'
+			},
+			'head':{
+				templateUrl: 'dashboard/head_template',
+				controller: ['$scope', function($scope){
+					$scope.title= "LIMS/VL | Login"
+				}]
+			},
+			'footer':{
+				templateUrl: 'dashboard/footer',
+				controller: ['$scope', function($scope){
+				}]
+			}
+		}
+	})
+
+	
+	//EID Login	
 	.state('Login',{
 		url: '/login',		
 		views:{

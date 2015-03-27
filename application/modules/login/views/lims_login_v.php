@@ -9,7 +9,7 @@
 		background-color:#F2F1EF;
 	}
 	#form-container{
-	background-color:#556676;/*#C5EFF7*/
+		background-color:#556676;/*#C5EFF7*/
 		color:#fff;
 		padding:1%;
 		-moz-border-radius: 5%;
@@ -18,12 +18,15 @@
 		-khtml-border-radius: 5%; 
 	}
 	#loginfm{
-	background-color:#1BBC9B;/*#E4F1FE*/
+		background-color:#C5EFF7;/*#E4F1FE*/
 		padding:2%;
+		color:#000;
 		-moz-border-radius: 2%;
 		-webkit-border-radius: 2%;
 		border-radius: 2%; 
-		-khtml-border-radius: 2%; 
+		-khtml-border-radius: 2%;
+		width: 80%;
+		margin-left:10%; 
 	}
 	input.ng-invalid.ng-dirty{
 		border:1px solid red;
@@ -31,7 +34,7 @@
 </style>
 
 <div class="row">
-	<div class="col-md-4 col-md-offset-4" id="form-container">
+	<div class="col-md-5 col-md-offset-4" id="form-container">
 		<center>
 			<h1>{{Title}}</h1>
 			<img src="<?php echo base_url('assets/images/tz.png'); ?>" style="width 100px; height: 100px;" /><br/>
